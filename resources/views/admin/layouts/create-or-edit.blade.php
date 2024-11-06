@@ -81,6 +81,15 @@
                         </select>
                     </div>
 
+                    <div class="form-group">
+                        <label for="type_id">Technology Type</label>
+                        <select class="form-control" id="type_id" name="type_id">
+                            @foreach ($types as $singleType)
+                                <option value="{{ $singleType->id }}">{{ $singleType->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="d-flex my-3">
                         <div class="text-center justify-content-start align-items-center">
                             <button type="submit" class="btn btn-success">@yield('form-title')</button>
