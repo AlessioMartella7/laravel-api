@@ -18,6 +18,7 @@ class Project extends Model
         'url',
         'start_date',
         'end_date',
-        'programming_language'
+        'programming_language',
+        'type_id'
     ];
 }
