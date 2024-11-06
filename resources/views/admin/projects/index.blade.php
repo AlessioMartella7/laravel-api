@@ -41,18 +41,20 @@
                                 <td>{{ $project->programming_language }}</td>
                                 <td>
                                     <a href="{{ route('admin.project.show', $project) }}"
-                                        class="btn btn-primary btn-sm">Show</a>
+                                        class="btn btn-primary btn-sm text-black fw-bold shadow border border-black">Show</a>
                                 </td>
                                 <td>
                                     <a href="{{ route('admin.project.edit', $project) }}"
-                                        class="btn btn-warning btn-sm">Edit</a>
+                                        class="btn btn-warning btn-sm fw-bold shadow border border-black">Edit</a>
                                 </td>
                                 <td>
                                     <form class="d-inline" action="{{ route('admin.project.delete', $project) }}"
                                         method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger btn-sm fw-bold text-black" type="submit">
+                                        <button
+                                            class="btn btn-danger btn-sm fw-bold fw-bold text-black shadow border border-black"
+                                            type="submit">
                                             Delete
                                         </button>
                                     </form>
