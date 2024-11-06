@@ -21,4 +21,8 @@ class Project extends Model
         'programming_language',
         'type_id'
     ];
+
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }
