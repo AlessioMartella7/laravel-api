@@ -23,6 +23,8 @@
                         <p><strong>Start Date:</strong> {{ $project->start_date }}</p>
                         <p><strong>End Date:</strong> {{ $project->end_date }}</p>
                         <p><strong>Programming Language:</strong> {{ $project->programming_language }}</p>
+                        <p><strong>Type Name:</strong> {{ $project->type->name }}</p>
+                        <p><strong>Type Description:</strong> {{ $project->type->description }}</p>
                     </div>
                 </div>
             </div>
