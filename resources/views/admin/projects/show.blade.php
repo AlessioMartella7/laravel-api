@@ -5,15 +5,15 @@
 @section('content')
 
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-12">
                 <h1 class="text-center my-5 text-primary">
                     Project Details
                 </h1>
             </div>
 
-            <div class="col-12">
-                <div class="card bg-light mb-4">
+            <div class="col-12 w-50 ">
+                <div class="card bg-light mb-4 shadow">
                     <div class="card-header bg-primary text-white">
                         <h5>{{ $project->name }}</h5>
                     </div>
