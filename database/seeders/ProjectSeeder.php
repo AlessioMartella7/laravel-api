@@ -24,7 +24,6 @@ class ProjectSeeder extends Seeder
         $newProject->url = $faker->url();
         $newProject->start_date = $faker->date();
         $newProject->end_date = $faker->date();
-        $newProject->programming_language = $faker->randomElement(['PHP', 'JavaScript', 'Python', 'Ruby', 'Java']);
         $newProject->type_id = $faker->randomElement($typesId);
         $newProject->save();
 

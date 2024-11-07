@@ -71,18 +71,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="programming_language">Programming Language</label>
-                        <select class="form-control" id="programming_language" name="programming_language">
-                            <option value="PHP">PHP</option>
-                            <option value="JavaScript">JavaScript</option>
-                            <option value="Python">Python</option>
-                            <option value="Ruby">Ruby</option>
-                            <option value="Java">Java</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="type_id">Technology Type</label>
+                        <label for="type_id">Project Type</label>
                         <select class="form-control" id="type_id" name="type_id">
                             @foreach ($types as $singleType)
                                 <option value="{{ $singleType->id }}">{{ $singleType->name }}</option>
