@@ -41,7 +41,6 @@ class ProjectController extends Controller
         $data = $request->validated([
 
         ]);
-
         $project = Project::create($data);
         $project->technologies()->sync($data['technologies']);
         return redirect()->route('admin.project.index');
@@ -70,8 +69,11 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
+
         $data = $request->validated();
         $project->update($data);
+        $project->technologies()->sync($data['technologies']);
+
         return redirect()->route('admin.project.show', $project);
     }
 
