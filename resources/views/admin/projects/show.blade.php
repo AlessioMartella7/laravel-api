@@ -24,6 +24,9 @@
                         <p><strong>End Date:</strong> {{ $project->end_date }}</p>
                         <p><strong>Type Name:</strong> {{ $project->type->name }}</p>
                         <p><strong>Type Description:</strong> {{ $project->type->description }}</p>
+                        @foreach ($project->technologies as $technology)
+                            <span class="badge rounded-pill text-bg-info shadow">{{ $technology->name }}</span>
+                        @endforeach
                     </div>
                 </div>
             </div>

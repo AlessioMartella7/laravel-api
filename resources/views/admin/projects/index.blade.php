@@ -24,6 +24,7 @@
                             <th scope="col">URL</th>
                             <th scope="col">Start Date</th>
                             <th scope="col">End Date</th>
+                            <th scope="col">Technologies</th>
                             <th scope="col" colspan="3">Actions</th>
 
                         </tr>
@@ -37,6 +38,11 @@
                                 <td>{{ $project->url }}</td>
                                 <td>{{ $project->start_date }}</td>
                                 <td>{{ $project->end_date }}</td>
+                                <td>
+                                    @foreach ($project->technologies as $technology)
+                                        <span class="badge rounded-pill text-bg-info shadow">{{ $technology->name }}</span>
+                                    @endforeach
+                                </td>
                                 <td>
                                     <a href="{{ route('admin.project.show', $project) }}"
                                         class="btn btn-primary btn-sm text-black fw-bold shadow border border-black">Show</a>
