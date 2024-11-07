@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\Technology;
 use App\Models\Type;
 use Database\Seeders\TypeSeeder;
 use Illuminate\Http\Request;
@@ -28,6 +29,7 @@ class ProjectController extends Controller
     {
         $project = new Project();
         $types = Type::all();
+        $technologies = Technology::all();
         return view('admin.projects.create', compact('project','types'));
     }
 
@@ -59,6 +61,7 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
+        $technologies = Technology::all();
         return view('admin.projects.edit', compact('project','types'));
     }
 
