@@ -38,11 +38,10 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        $data = $request->validated([
-
-        ]);
+        $data = $request->validated();
         $project = Project::create($data);
         $project->technologies()->sync($data['technologies']);
+
         return redirect()->route('admin.project.index');
     }
 
