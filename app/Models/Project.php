@@ -18,7 +18,8 @@ class Project extends Model
         'url',
         'start_date',
         'end_date',
-        'type_id'
+        'type_id',
+        'technologies'
     ];
 
     public function type(){

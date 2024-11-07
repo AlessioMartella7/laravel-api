@@ -43,7 +43,7 @@ class ProjectController extends Controller
         ]);
 
         $project = Project::create($data);
-
+        $project->technologies()->sync($data['technologies']);
         return redirect()->route('admin.project.index');
     }
 

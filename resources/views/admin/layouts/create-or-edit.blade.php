@@ -74,10 +74,22 @@
                         <label for="type_id">Project Type</label>
                         <select class="form-control" id="type_id" name="type_id">
                             @foreach ($types as $singleType)
-                                <option value="{{ $singleType->id }}">{{ $singleType->name }}</option>
+                                <option value="{{ $singleType->id }}" @if ($singleType->id == old('type_id', $singleType->type_id)) selected @endif>
+                                    {{ $singleType->name }}</option>
                             @endforeach
                         </select>
                     </div>
+
+                    @foreach ($technologies as $technology)
+                        <div class="form-check">
+                            <label class="form-check-label" for="project-technologies" name="technologies[]">
+                                {{ $technology->name }}
+                            </label>
+                            <input class="form-check-input" type="checkbox" name="technologies[]"
+                                value="{{ $technology->id }}" id="project-technologies">
+
+                        </div>
+                    @endforeach
 
                     <div class="d-flex my-3">
                         <div class="text-center justify-content-start align-items-center">
