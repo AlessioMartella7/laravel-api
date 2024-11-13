@@ -40,8 +40,11 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         $data = $request->validated();
+
+        if($request->hasFile('image')){
         $filePath = Storage::disk('public')->put('image/projects', $request->image);
         $data['image'] = $filePath;
+        }
         $project = Project::create($data);
         $project->technologies()->sync($data['technologies']);
 
@@ -73,6 +76,15 @@ class ProjectController extends Controller
     {
 
         $data = $request->validated();
+
+        if($request->hasFile('image')){
+            if($project->image){
+                Storage::delete($project->image);
+            }
+            $filePath = Storage::disk('public')->put('image/projects', $request->image);
+            $data['image'] = $filePath;
+            }
+
         $project->update($data);
         $project->technologies()->sync($data['technologies']);
 
