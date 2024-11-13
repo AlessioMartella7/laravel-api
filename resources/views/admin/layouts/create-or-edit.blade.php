@@ -95,7 +95,8 @@
                                 {{ $technology->name }}
                             </label>
                             <input class="form-check-input" type="checkbox" name="technologies[]"
-                                value="{{ $technology->id }}" id="project-technologies">
+                                value="{{ $technology->id }}" id="project-technologies"
+                                @if (in_array($technology->id, old('technologies', $project->technologies->pluck('id')->toArray()))) @checked(true) @endif>
                         </div>
                     @endforeach
                     @error('technologies')
