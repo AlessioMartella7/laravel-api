@@ -70,6 +70,14 @@
                         @enderror
                     </div>
 
+                    <div class="form-group my-2">
+                        <label for="project-image">Image</label>
+                        <input type="file" name="image" id="project-image" class="form-control">
+                        @error('image')
+                            <div class="alert alert-warning mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
+
                     <div class="form-group">
                         <label for="type_id">Project Type</label>
                         <select class="form-control" id="type_id" name="type_id">
