@@ -13,7 +13,7 @@
             </div>
             <div class="col-12 d-flex justify-content-center ">
 
-                <form action="@yield('form-action')" method="POST" class="w-50">
+                <form action="@yield('form-action')" method="POST" class="w-50" enctype="multipart/form-data">
                     @yield('form-method')
                     @csrf
 
