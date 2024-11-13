@@ -10,6 +10,7 @@ use App\Models\Technology;
 use App\Models\Type;
 use Database\Seeders\TypeSeeder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -39,6 +40,8 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         $data = $request->validated();
+        $filePath = Storage::disk('public')->put('image/projects', $request->image);
+        $data['image'] = $filePath;
         $project = Project::create($data);
         $project->technologies()->sync($data['technologies']);
 

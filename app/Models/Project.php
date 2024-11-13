@@ -19,6 +19,7 @@ class Project extends Model
         'start_date',
         'end_date',
         'type_id',
+        'image'
     ];
 
     public function type(){

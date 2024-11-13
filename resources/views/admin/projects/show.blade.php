@@ -17,6 +17,9 @@
                     <div class="card-header bg-primary text-white">
                         <h5>{{ $project->name }}</h5>
                     </div>
+                    <div class="card-image text-center p-2">
+                        <img src="{{ asset('/storage/' . $project->image) }}" alt="{{ $project->name }}" class=" rounded">
+                    </div>
                     <div class="card-body">
                         <p><strong>Description:</strong> {{ $project->description }}</p>
                         <p><strong>URL:</strong> {{ $project->url }}</p>

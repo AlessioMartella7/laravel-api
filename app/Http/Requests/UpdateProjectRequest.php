@@ -36,7 +36,8 @@ class UpdateProjectRequest extends FormRequest
             'start_date' => ['required', 'date'],
             'end_date' => ['required', 'date'],
             'type_id' => ['required','numeric', 'integer', 'exists:types,id'],
-            'technologies'=> ['required','array', 'exists:technologies,id']
+            'technologies'=> ['required','array', 'exists:technologies,id'],
+            'image' => ['nullable', 'image', 'max:250']
         ];
     }
 }
